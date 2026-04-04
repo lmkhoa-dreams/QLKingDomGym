@@ -42,7 +42,6 @@
             this.cbGT = new System.Windows.Forms.ComboBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.btnQuayLai = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnThem
@@ -56,6 +55,7 @@
             this.btnThem.TabIndex = 9;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label1
             // 
@@ -132,7 +132,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(544, 248);
+            this.label6.Location = new System.Drawing.Point(617, 248);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 45);
             this.label6.TabIndex = 16;
@@ -148,6 +148,7 @@
             // 
             // cbGioiTinh
             // 
+            this.cbGioiTinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGioiTinh.FormattingEnabled = true;
             this.cbGioiTinh.Items.AddRange(new object[] {
@@ -161,6 +162,7 @@
             // 
             // cbPT
             // 
+            this.cbPT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbPT.FormattingEnabled = true;
             this.cbPT.Items.AddRange(new object[] {
@@ -168,19 +170,20 @@
             "Nữ"});
             this.cbPT.Location = new System.Drawing.Point(522, 297);
             this.cbPT.Name = "cbPT";
-            this.cbPT.Size = new System.Drawing.Size(190, 39);
+            this.cbPT.Size = new System.Drawing.Size(339, 39);
             this.cbPT.TabIndex = 22;
             // 
             // cbGT
             // 
+            this.cbGT.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGT.FormattingEnabled = true;
             this.cbGT.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbGT.Location = new System.Drawing.Point(655, 185);
+            this.cbGT.Location = new System.Drawing.Point(601, 185);
             this.cbGT.Name = "cbGT";
-            this.cbGT.Size = new System.Drawing.Size(190, 39);
+            this.cbGT.Size = new System.Drawing.Size(298, 39);
             this.cbGT.TabIndex = 23;
             // 
             // btnThoat
@@ -188,7 +191,7 @@
             this.btnThoat.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThoat.Location = new System.Drawing.Point(542, 477);
+            this.btnThoat.Location = new System.Drawing.Point(394, 481);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(156, 56);
             this.btnThoat.TabIndex = 24;
@@ -207,26 +210,13 @@
             this.btnXoa.TabIndex = 25;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuayLai.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnQuayLai.Location = new System.Drawing.Point(231, 477);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(156, 56);
-            this.btnQuayLai.TabIndex = 26;
-            this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = false;
-            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // frmDK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 561);
-            this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.cbGT);
@@ -243,6 +233,7 @@
             this.Controls.Add(this.btnThem);
             this.Name = "frmDK";
             this.Text = "Đăng Ký";
+            this.Load += new System.EventHandler(this.frmDK_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -263,6 +254,5 @@
         private System.Windows.Forms.ComboBox cbGT;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.Button btnQuayLai;
     }
 }
