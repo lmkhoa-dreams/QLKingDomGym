@@ -29,13 +29,12 @@
         private void InitializeComponent()
         {
             this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDSHV = new System.Windows.Forms.DataGridView();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSHV)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -51,15 +50,17 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "KingDomGym";
             // 
-            // dataGridView1
+            // dgvDSHV
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 207);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(992, 263);
-            this.dataGridView1.TabIndex = 10;
+            this.dgvDSHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSHV.Location = new System.Drawing.Point(2, 207);
+            this.dgvDSHV.Name = "dgvDSHV";
+            this.dgvDSHV.RowHeadersWidth = 51;
+            this.dgvDSHV.RowTemplate.Height = 24;
+            this.dgvDSHV.Size = new System.Drawing.Size(992, 263);
+            this.dgvDSHV.TabIndex = 10;
+            this.dgvDSHV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvDSHV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtTimKiem
             // 
@@ -79,12 +80,13 @@
             this.btnTimKiem.TabIndex = 12;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // btnThoat
             // 
             this.btnThoat.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(717, 494);
+            this.btnThoat.Location = new System.Drawing.Point(674, 494);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(172, 55);
             this.btnThoat.TabIndex = 13;
@@ -92,27 +94,17 @@
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuayLai.Location = new System.Drawing.Point(413, 494);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(172, 55);
-            this.btnQuayLai.TabIndex = 14;
-            this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = false;
-            // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(90, 494);
+            this.btnXoa.Location = new System.Drawing.Point(146, 494);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(172, 55);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // frmDSHV
             // 
@@ -120,15 +112,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 576);
             this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnTimKiem);
             this.Controls.Add(this.txtTimKiem);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDSHV);
             this.Controls.Add(this.label3);
             this.Name = "frmDSHV";
             this.Text = "DS Hội Viên";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmDSHV_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSHV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,11 +129,10 @@
         #endregion
 
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDSHV;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.Button btnXoa;
     }
 }

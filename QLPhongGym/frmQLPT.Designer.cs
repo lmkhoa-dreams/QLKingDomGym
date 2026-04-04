@@ -1,6 +1,6 @@
 ﻿namespace QLPhongGym
 {
-    partial class frnQLPT
+    partial class frmQLPT
     {
         /// <summary>
         /// Required designer variable.
@@ -185,8 +185,9 @@
             this.btnThoat.TabIndex = 31;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // frnQLPT
+            // frmQLPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -204,7 +205,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtHVT);
             this.Controls.Add(this.label3);
-            this.Name = "frnQLPT";
+            this.Name = "frmQLPT";
             this.Text = "QLPT";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

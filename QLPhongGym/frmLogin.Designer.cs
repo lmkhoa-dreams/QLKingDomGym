@@ -50,7 +50,7 @@
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Location = new System.Drawing.Point(127, 138);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(173, 46);
+            this.label1.Size = new System.Drawing.Size(168, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài khoản";
             // 
@@ -61,7 +61,7 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(129, 216);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(171, 46);
+            this.label2.Size = new System.Drawing.Size(168, 45);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu";
             // 
@@ -90,6 +90,7 @@
             this.btnDangNhap.TabIndex = 4;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
+            this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
             // btnThoat
             // 

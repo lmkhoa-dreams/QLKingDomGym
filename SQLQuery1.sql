@@ -11,14 +11,14 @@ CREATE TABLE taikhoan (
 
 CREATE TABLE hoivien (
     mahv INT IDENTITY(1,1) PRIMARY KEY,
-    ten VARCHAR(100),
+    ten NVARCHAR(100),
     gioitinh NVARCHAR(20),
     sdt VARCHAR(20)
 );
 
 CREATE TABLE pt (
     mapt INT IDENTITY(1,1) PRIMARY KEY,
-    ten VARCHAR(100),
+    ten NVARCHAR(100),
     gioitinh NVARCHAR(20),
     sdt VARCHAR(20)
 );

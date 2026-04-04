@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace QLPhongGym
 {
-    public partial class frnQLPT : Form
+    public partial class frmQLPT : Form
     {
-        public frnQLPT()
+        public frmQLPT()
         {
             InitializeComponent();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
