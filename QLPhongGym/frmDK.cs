@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL_QLPhongGym;
+using DTO_QLPhongGym;
 
 namespace QLPhongGym
 {
@@ -49,36 +50,31 @@ namespace QLPhongGym
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string ten = txtHVT.Text;
-            string sdt = txtSDT.Text;
-            string gioitinh = cbGioiTinh.Text;
-
             if (cbGT.SelectedValue == null)
             {
-                MessageBox.Show("Vui lòng chọn gói tập");
+                MessageBox.Show("Vui lòng chọn gói tập!", "Cảnh báo");
                 return;
             }
 
-            // Lấy ID Gói Tập 
-            int idGoiTap = Convert.ToInt32(cbGT.SelectedValue);
+            DTO_HoiVien hv = new DTO_HoiVien();
+            hv.Ten = txtHVT.Text;
+            hv.SDT = txtSDT.Text;
+            hv.GioiTinh = cbGioiTinh.Text;
+            hv.IdGoiTap = Convert.ToInt32(cbGT.SelectedValue);
 
-            // Xử lý ID PT: Nếu không chọn PT thì để mặc định là 0 (xuống DAL sẽ tự chuyển thành NULL)
-            int idPT = 0;
             if (cbPT.SelectedValue != null)
-            {
-                idPT = Convert.ToInt32(cbPT.SelectedValue);
-            }
+                hv.IdPT = Convert.ToInt32(cbPT.SelectedValue);
+            else
+                hv.IdPT = 0;
 
-            // Gọi BLL để tống dữ liệu xuống Database
-            if (HV.ThemHoiVien(ten, gioitinh, sdt, idGoiTap, idPT))
+            if (HV.ThemHoiVien(hv))
             {
                 MessageBox.Show("Đăng ký thành công!");
-
                 btnXoa_Click(sender, e);
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ họ tên và số điện thoại");
+                MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại!");
             }
         }
         private void btnXoa_Click(object sender, EventArgs e)
