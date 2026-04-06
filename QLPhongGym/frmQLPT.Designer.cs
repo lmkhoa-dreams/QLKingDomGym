@@ -36,8 +36,6 @@
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnQuayLai = new System.Windows.Forms.Button();
-            this.btnChinhSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -131,33 +129,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(1063, 232);
             this.dataGridView1.TabIndex = 26;
             // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnQuayLai.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuayLai.Location = new System.Drawing.Point(658, 514);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(172, 55);
-            this.btnQuayLai.TabIndex = 27;
-            this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = false;
-            // 
-            // btnChinhSua
-            // 
-            this.btnChinhSua.BackColor = System.Drawing.Color.DarkSalmon;
-            this.btnChinhSua.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChinhSua.Location = new System.Drawing.Point(451, 514);
-            this.btnChinhSua.Name = "btnChinhSua";
-            this.btnChinhSua.Size = new System.Drawing.Size(172, 55);
-            this.btnChinhSua.TabIndex = 28;
-            this.btnChinhSua.Text = "Chỉnh sửa";
-            this.btnChinhSua.UseVisualStyleBackColor = false;
-            // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(237, 514);
+            this.btnXoa.Location = new System.Drawing.Point(443, 514);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(172, 55);
             this.btnXoa.TabIndex = 29;
@@ -195,8 +171,6 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnChinhSua);
-            this.Controls.Add(this.btnQuayLai);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtSDT);
             this.Controls.Add(this.label1);
@@ -223,8 +197,6 @@
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnQuayLai;
-        private System.Windows.Forms.Button btnChinhSua;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnThoat;

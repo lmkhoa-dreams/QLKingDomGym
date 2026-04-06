@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DAL_QLPhongGym;
 using System.Data;
+using DTO_QLPhongGym;
 
 namespace BLL_QLPhongGym
 {
@@ -12,19 +13,21 @@ namespace BLL_QLPhongGym
     {
         DAL_HoiVien HV = new DAL_HoiVien();
 
-        public DataTable LayDanhSach()
+        public List<DTO_HoiVien> LayDanhSach()
         {
             return HV.GetDanhSachHoiVien();
         }
 
-        public bool ThemHoiVien(string ten, string gioitinh, string sdt, int idGoiTap, int idPT)
+        public bool ThemHoiVien(DTO_HoiVien hv)
         {
-            //Tên,SĐT buộc có 
-            if (string.IsNullOrWhiteSpace(ten) || string.IsNullOrWhiteSpace(sdt))
+            // Móc đồ trong thùng ra kiểm tra xem có trống không
+            if (string.IsNullOrWhiteSpace(hv.Ten) || string.IsNullOrWhiteSpace(hv.SDT))
             {
                 return false;
             }
-            return HV.ThemHoiVien(ten, gioitinh, sdt, idGoiTap, idPT);
+
+            // Ném nguyên cái thùng xuống DAL
+            return HV.ThemHoiVien(hv);
         }
         public bool Sua(int mahv, string ten, string gioitinh, string sdt)
         {
