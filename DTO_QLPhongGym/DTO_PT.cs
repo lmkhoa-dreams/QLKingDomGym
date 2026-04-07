@@ -12,5 +12,11 @@ namespace DTO_QLPhongGym
         public string Ten { get; set; }
         public string GioiTinh { get; set; }
         public string SDT { get; set; }
+        public DTO_PT(string ten, string gioiTinh, string sdt)
+        {
+            this.Ten = ten;
+            this.GioiTinh = gioiTinh;
+            this.SDT = sdt;
+        }
     }
 }

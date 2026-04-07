@@ -1,10 +1,11 @@
-﻿using System;
+﻿using DAL_QLPhongGym;
+using DTO_QLPhongGym;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DAL_QLPhongGym;
-using System.Data;
 
 namespace BLL_QLPhongGym
 {
@@ -14,6 +15,21 @@ namespace BLL_QLPhongGym
         public DataTable LayDSPT()
         {
             return PT.GetPT();
+        }
+        public bool ThemPT(DTO_PT pt)
+        {
+            // Kiểm tra rỗng (Validation)
+            if (string.IsNullOrWhiteSpace(pt.Ten) || string.IsNullOrWhiteSpace(pt.SDT))
+            {
+                return false;
+            }
+
+            return PT.ThemPT(pt);
+        }
+
+        public bool XoaPT(int maPT)
+        {
+            return PT.XoaPT(maPT);
         }
     }
 }
