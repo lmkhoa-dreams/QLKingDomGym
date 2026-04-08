@@ -12,44 +12,25 @@ namespace DAL_QLPhongGym
     public class DAL_HoiVien
     {
         string connStr = @"Data Source=localhost;Initial Catalog=KingDomGym;Integrated Security=True";
-        // Nhớ thêm dòng using System.Collections.Generic; ở trên cùng nếu nó báo lỗi chữ List nha
-        public List<DTO_HoiVien> GetDanhSachHoiVien()
+        public DataTable GetDanhSachHoiVien()
         {
-            List<DTO_HoiVien> dsHoiVien = new List<DTO_HoiVien>(); // Chiếc xe tải chở DTO
-
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                conn.Open();
                 string sql = @"
-            SELECT hv.mahv, hv.ten, hv.gioitinh, hv.sdt, 
-                   gt.tengoi, pt.ten as tenpt, dk.ngay_dangky
+            SELECT hv.mahv as 'Mã HV', hv.ten as 'Họ Tên', hv.gioitinh as 'Giới Tính', hv.sdt as 'SĐT', 
+                   ISNULL(gt.tengoi, N'Chưa đăng ký') as 'Gói Tập', 
+                   ISNULL(pt.ten, N'Không thuê') as 'Tên PT', 
+                   dk.ngay_dangky as 'Ngày ĐK'
             FROM hoivien hv
             LEFT JOIN dangky dk ON hv.mahv = dk.hoivien_mahv
             LEFT JOIN goitap gt ON dk.goitap_magoi = gt.magoi
             LEFT JOIN pt ON dk.pt_mapt = pt.mapt";
 
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    DTO_HoiVien hv = new DTO_HoiVien();
-
-                    // Bắt đầu nhét đồ vào thùng
-                    hv.MaHV = Convert.ToInt32(reader["mahv"]);
-                    hv.Ten = reader["ten"].ToString();
-                    hv.GioiTinh = reader["gioitinh"].ToString();
-                    hv.SDT = reader["sdt"].ToString();
-
-                    // Những cột LEFT JOIN có thể bị rỗng (NULL), phải kiểm tra kỹ bằng DBNull.Value để không bị lỗi văng app
-                    hv.TenGoiTap = reader["tengoi"] != DBNull.Value ? reader["tengoi"].ToString() : "Chưa đăng ký";
-                    hv.TenPT = reader["tenpt"] != DBNull.Value ? reader["tenpt"].ToString() : "Không thuê";
-
-                    // Quăng cái thùng đã đóng gói lên xe tải
-                    dsHoiVien.Add(hv);
-                }
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
             }
-            return dsHoiVien;
         }
 
         //Thêm hội viên mới
@@ -74,7 +55,7 @@ namespace DAL_QLPhongGym
                     SqlCommand cmdDK = new SqlCommand(sqlDK, conn, transaction);
                     cmdDK.Parameters.AddWithValue("@mahv", mahv);
                     cmdDK.Parameters.AddWithValue("@magoi", hv.IdGoiTap);
-                    cmdDK.Parameters.AddWithValue("@ngay", DateTime.Now.Date);
+                    cmdDK.Parameters.AddWithValue("@ngay", hv.NgayDK);
 
                     if (hv.IdPT == 0)
                         cmdDK.Parameters.AddWithValue("@mapt", DBNull.Value);
@@ -155,6 +136,40 @@ namespace DAL_QLPhongGym
                     trans.Rollback();
                     return false;
                 }
+            }
+        }
+        // Chỉnh sửa DSHV
+        public bool CapNhatHV(int mahv, int magoi, int mapt)
+        {
+            using (SqlConnection conn = new SqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "";
+
+                if (magoi == 0)
+                {
+                    sql = "DELETE FROM dangky WHERE hoivien_mahv = @mahv";
+                }
+                else
+                {
+                    sql = @"
+                IF EXISTS (SELECT 1 FROM dangky WHERE hoivien_mahv = @mahv)
+                    UPDATE dangky SET goitap_magoi = @magoi, pt_mapt = @mapt, ngay_dangky = GETDATE() WHERE hoivien_mahv = @mahv
+                ELSE
+                    INSERT INTO dangky(hoivien_mahv, goitap_magoi, pt_mapt, ngay_dangky) VALUES (@mahv, @magoi, @mapt, GETDATE())";
+                }
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@mahv", mahv);
+
+                if (magoi > 0)
+                {
+                    cmd.Parameters.AddWithValue("@magoi", magoi);
+                    if (mapt == 0) cmd.Parameters.AddWithValue("@mapt", DBNull.Value);
+                    else cmd.Parameters.AddWithValue("@mapt", mapt);
+                }
+
+                return cmd.ExecuteNonQuery() >= 0;
             }
         }
     }

@@ -34,6 +34,9 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.cboGoiTapCapNhat = new System.Windows.Forms.ComboBox();
+            this.cboPTCapNhat = new System.Windows.Forms.ComboBox();
+            this.btnCapNhat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,7 +56,7 @@
             // dgvDSHV
             // 
             this.dgvDSHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSHV.Location = new System.Drawing.Point(2, 207);
+            this.dgvDSHV.Location = new System.Drawing.Point(2, 176);
             this.dgvDSHV.Name = "dgvDSHV";
             this.dgvDSHV.RowHeadersWidth = 51;
             this.dgvDSHV.RowTemplate.Height = 24;
@@ -65,7 +68,7 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(2, 147);
+            this.txtTimKiem.Location = new System.Drawing.Point(2, 118);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(808, 43);
             this.txtTimKiem.TabIndex = 11;
@@ -74,7 +77,7 @@
             // 
             this.btnTimKiem.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTimKiem.Location = new System.Drawing.Point(816, 135);
+            this.btnTimKiem.Location = new System.Drawing.Point(816, 106);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(172, 55);
             this.btnTimKiem.TabIndex = 12;
@@ -86,7 +89,7 @@
             // 
             this.btnThoat.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(674, 494);
+            this.btnThoat.Location = new System.Drawing.Point(779, 481);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(172, 55);
             this.btnThoat.TabIndex = 13;
@@ -98,7 +101,7 @@
             // 
             this.btnXoa.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(146, 494);
+            this.btnXoa.Location = new System.Drawing.Point(512, 481);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(172, 55);
             this.btnXoa.TabIndex = 15;
@@ -106,11 +109,46 @@
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // cboGoiTapCapNhat
+            // 
+            this.cboGoiTapCapNhat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboGoiTapCapNhat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboGoiTapCapNhat.FormattingEnabled = true;
+            this.cboGoiTapCapNhat.Location = new System.Drawing.Point(12, 464);
+            this.cboGoiTapCapNhat.Name = "cboGoiTapCapNhat";
+            this.cboGoiTapCapNhat.Size = new System.Drawing.Size(194, 31);
+            this.cboGoiTapCapNhat.TabIndex = 16;
+            // 
+            // cboPTCapNhat
+            // 
+            this.cboPTCapNhat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPTCapNhat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboPTCapNhat.FormattingEnabled = true;
+            this.cboPTCapNhat.Location = new System.Drawing.Point(227, 464);
+            this.cboPTCapNhat.Name = "cboPTCapNhat";
+            this.cboPTCapNhat.Size = new System.Drawing.Size(204, 31);
+            this.cboPTCapNhat.TabIndex = 17;
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnCapNhat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCapNhat.Location = new System.Drawing.Point(130, 501);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(172, 55);
+            this.btnCapNhat.TabIndex = 18;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.UseVisualStyleBackColor = false;
+            this.btnCapNhat.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmDSHV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 576);
+            this.Controls.Add(this.btnCapNhat);
+            this.Controls.Add(this.cboPTCapNhat);
+            this.Controls.Add(this.cboGoiTapCapNhat);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnTimKiem);
@@ -134,5 +172,8 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.ComboBox cboGoiTapCapNhat;
+        private System.Windows.Forms.ComboBox cboPTCapNhat;
+        private System.Windows.Forms.Button btnCapNhat;
     }
 }

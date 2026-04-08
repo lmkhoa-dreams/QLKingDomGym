@@ -7,8 +7,6 @@ namespace DAL_QLPhongGym
     public class DAL_GoiTap
     {
         string connStr = @"Data Source=localhost;Initial Catalog=KingDomGym;Integrated Security=True";
-
-        // 🔹 Lấy tất cả (đầy đủ cột)
         public DataTable GetAll()
         {
             using (SqlConnection conn = new SqlConnection(connStr))
@@ -20,8 +18,6 @@ namespace DAL_QLPhongGym
                 return dt;
             }
         }
-
-        // 🔹 Thêm gói tập
         public bool Insert(string tenGoi, decimal giaTien)
         {
             using (SqlConnection conn = new SqlConnection(connStr))
@@ -39,8 +35,6 @@ namespace DAL_QLPhongGym
                 return kq > 0;
             }
         }
-
-        // 🔹 Xóa gói tập
         public bool Delete(int maGoi)
         {
             using (SqlConnection conn = new SqlConnection(connStr))

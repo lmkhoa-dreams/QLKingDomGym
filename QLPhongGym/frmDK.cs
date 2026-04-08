@@ -61,6 +61,7 @@ namespace QLPhongGym
             hv.SDT = txtSDT.Text;
             hv.GioiTinh = cbGioiTinh.Text;
             hv.IdGoiTap = Convert.ToInt32(cbGT.SelectedValue);
+            hv.NgayDK = dtpNgayDK.Value;
 
             if (cbPT.SelectedValue != null)
                 hv.IdPT = Convert.ToInt32(cbPT.SelectedValue);
@@ -87,6 +88,15 @@ namespace QLPhongGym
             cbPT.SelectedIndex = -1;
 
             txtHVT.Focus();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        private void dtpNgayDK_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

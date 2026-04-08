@@ -42,6 +42,8 @@
             this.cbGT = new System.Windows.Forms.ComboBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtpNgayDK = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.SuspendLayout();
             // 
             // btnThem
@@ -49,7 +51,7 @@
             this.btnThem.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThem.Location = new System.Drawing.Point(231, 390);
+            this.btnThem.Location = new System.Drawing.Point(169, 433);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(156, 54);
             this.btnThem.TabIndex = 9;
@@ -63,7 +65,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.Control;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(342, 136);
+            this.label1.Location = new System.Drawing.Point(386, 136);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(225, 45);
             this.label1.TabIndex = 10;
@@ -75,7 +77,7 @@
             this.label2.BackColor = System.Drawing.SystemColors.Control;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(688, 136);
+            this.label2.Location = new System.Drawing.Point(789, 136);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 45);
             this.label2.TabIndex = 11;
@@ -99,7 +101,7 @@
             this.label4.BackColor = System.Drawing.SystemColors.Control;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(225, 248);
+            this.label4.Location = new System.Drawing.Point(90, 265);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(153, 45);
             this.label4.TabIndex = 13;
@@ -112,7 +114,7 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(286, 33);
+            this.label5.Location = new System.Drawing.Point(338, 33);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(359, 67);
             this.label5.TabIndex = 14;
@@ -132,7 +134,7 @@
             this.label6.BackColor = System.Drawing.SystemColors.Control;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label6.Location = new System.Drawing.Point(617, 248);
+            this.label6.Location = new System.Drawing.Point(425, 265);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(145, 45);
             this.label6.TabIndex = 16;
@@ -141,7 +143,7 @@
             // txtSDT
             // 
             this.txtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSDT.Location = new System.Drawing.Point(367, 185);
+            this.txtSDT.Location = new System.Drawing.Point(411, 185);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(173, 34);
             this.txtSDT.TabIndex = 17;
@@ -154,7 +156,7 @@
             this.cbGioiTinh.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbGioiTinh.Location = new System.Drawing.Point(207, 297);
+            this.cbGioiTinh.Location = new System.Drawing.Point(70, 313);
             this.cbGioiTinh.Name = "cbGioiTinh";
             this.cbGioiTinh.Size = new System.Drawing.Size(190, 39);
             this.cbGioiTinh.TabIndex = 21;
@@ -168,7 +170,7 @@
             this.cbPT.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbPT.Location = new System.Drawing.Point(522, 297);
+            this.cbPT.Location = new System.Drawing.Point(320, 313);
             this.cbPT.Name = "cbPT";
             this.cbPT.Size = new System.Drawing.Size(339, 39);
             this.cbPT.TabIndex = 22;
@@ -181,7 +183,7 @@
             this.cbGT.Items.AddRange(new object[] {
             "Nam",
             "Nữ"});
-            this.cbGT.Location = new System.Drawing.Point(601, 185);
+            this.cbGT.Location = new System.Drawing.Point(704, 185);
             this.cbGT.Name = "cbGT";
             this.cbGT.Size = new System.Drawing.Size(298, 39);
             this.cbGT.TabIndex = 23;
@@ -191,7 +193,7 @@
             this.btnThoat.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnThoat.Location = new System.Drawing.Point(394, 481);
+            this.btnThoat.Location = new System.Drawing.Point(733, 432);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(156, 56);
             this.btnThoat.TabIndex = 24;
@@ -204,7 +206,7 @@
             this.btnXoa.BackColor = System.Drawing.Color.DarkSalmon;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnXoa.Location = new System.Drawing.Point(542, 390);
+            this.btnXoa.Location = new System.Drawing.Point(455, 433);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(156, 54);
             this.btnXoa.TabIndex = 25;
@@ -212,11 +214,43 @@
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.SystemColors.Control;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label7.Location = new System.Drawing.Point(739, 265);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(235, 45);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Ngày đăng ký";
+            // 
+            // dtpNgayDK
+            // 
+            this.dtpNgayDK.BackColor = System.Drawing.Color.White;
+            this.dtpNgayDK.BorderRadius = 5;
+            this.dtpNgayDK.Checked = true;
+            this.dtpNgayDK.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDK.FillColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dtpNgayDK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDK.ForeColor = System.Drawing.Color.LightCoral;
+            this.dtpNgayDK.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDK.Location = new System.Drawing.Point(703, 315);
+            this.dtpNgayDK.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.dtpNgayDK.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtpNgayDK.Name = "dtpNgayDK";
+            this.dtpNgayDK.Size = new System.Drawing.Size(298, 36);
+            this.dtpNgayDK.TabIndex = 28;
+            this.dtpNgayDK.Value = new System.DateTime(2026, 4, 9, 3, 1, 8, 965);
+            // 
             // frmDK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 561);
+            this.ClientSize = new System.Drawing.Size(1040, 561);
+            this.Controls.Add(this.dtpNgayDK);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.cbGT);
@@ -254,5 +288,7 @@
         private System.Windows.Forms.ComboBox cbGT;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
+        private System.Windows.Forms.Label label7;
+        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayDK;
     }
 }

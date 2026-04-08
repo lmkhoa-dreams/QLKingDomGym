@@ -18,7 +18,6 @@ namespace BLL_QLPhongGym
         }
         public bool ThemPT(DTO_PT pt)
         {
-            // Kiểm tra rỗng (Validation)
             if (string.IsNullOrWhiteSpace(pt.Ten) || string.IsNullOrWhiteSpace(pt.SDT))
             {
                 return false;
@@ -26,7 +25,6 @@ namespace BLL_QLPhongGym
 
             return PT.ThemPT(pt);
         }
-
         public bool XoaPT(int maPT)
         {
             return PT.XoaPT(maPT);

@@ -16,5 +16,6 @@ namespace DTO_QLPhongGym
         public int IdPT { get; set; }
         public string TenGoiTap { get; set; }
         public string TenPT { get; set; }
+        public DateTime NgayDK { get;set; }
     }
 }

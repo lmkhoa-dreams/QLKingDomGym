@@ -27,13 +27,10 @@ namespace DAL_QLPhongGym
         public bool ThemPT(DTO_PT pt)
         {
             string sql = "INSERT INTO pt (ten, gioitinh, sdt) VALUES (@ten, @gioitinh, @sdt)";
-
-            // Tái sử dụng biến connStr đã có sẵn ở đầu class
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 using (SqlCommand cmd = new SqlCommand(sql, conn))
                 {
-                    // Truyền tham số để tránh lỗi SQL Injection
                     cmd.Parameters.AddWithValue("@ten", pt.Ten);
                     cmd.Parameters.AddWithValue("@gioitinh", pt.GioiTinh);
                     cmd.Parameters.AddWithValue("@sdt", pt.SDT);
@@ -41,12 +38,12 @@ namespace DAL_QLPhongGym
                     try
                     {
                         conn.Open();
-                        int result = cmd.ExecuteNonQuery(); // Thực thi câu lệnh INSERT
-                        return result > 0; // Nếu insert thành công, result sẽ > 0
+                        int result = cmd.ExecuteNonQuery(); 
+                        return result > 0; 
                     }
                     catch
                     {
-                        return false; // Bắt lỗi nếu có vấn đề khi lưu vào DB
+                        return false;
                     }
                 }
             }
