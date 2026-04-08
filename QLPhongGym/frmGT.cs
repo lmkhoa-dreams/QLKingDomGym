@@ -8,7 +8,7 @@ namespace QLPhongGym
 {
     public partial class frmGT : Form
     {
-        BLL_GoiTap bll = new BLL_GoiTap();
+        BLL_GoiTap GT = new BLL_GoiTap();
 
         public frmGT()
         {
@@ -20,7 +20,7 @@ namespace QLPhongGym
         }
         void LoadData()
         {
-            dataGridView1.DataSource = bll.LayDSGoiTap();
+            dataGridView1.DataSource = GT.LayDSGoiTap();
 
             dataGridView1.Columns["magoi"].HeaderText = "Mã gói";
             dataGridView1.Columns["tengoi"].HeaderText = "Tên gói";
@@ -43,7 +43,7 @@ namespace QLPhongGym
 
                 decimal gia = Convert.ToDecimal(giaText);
 
-                if (bll.Add(ten, gia))
+                if (GT.Add(ten, gia))
                 {
                     MessageBox.Show("Thêm thành công");
                     LoadData();
@@ -77,10 +77,10 @@ namespace QLPhongGym
                 if (kq == DialogResult.Yes)
                 {
                     //Gọi hàm Xoa ở BLL
-                    if (bll.Delete(maGoi))
+                    if (GT.Delete(maGoi))
                     {
                         MessageBox.Show("Đã xóa thành công!");
-                        dataGridView1.DataSource = bll.LayDSGoiTap();
+                        dataGridView1.DataSource = GT.LayDSGoiTap();
                     }
                     else
                     {
