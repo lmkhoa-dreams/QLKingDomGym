@@ -100,6 +100,10 @@ namespace QLPhongGym
                         MessageBox.Show("Xóa thành công!", "Thông báo");
                         LoadData(); // Cập nhật lại bảng
                     }
+                    else
+                    {
+                        MessageBox.Show("Đã có người ĐK ko thể xóa");
+                    }
                 }
             }
             else

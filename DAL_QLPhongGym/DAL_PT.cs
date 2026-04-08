@@ -64,7 +64,7 @@ namespace DAL_QLPhongGym
                         conn.Open();
                         return cmd.ExecuteNonQuery() > 0;
                     }
-                    catch (Exception ex)
+                    catch (Exception )
                     {
                         return false;
                     }
