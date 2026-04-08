@@ -1,19 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using DAL_QLPhongGym;
-using System.Data;
 
 namespace BLL_QLPhongGym
 {
     public class BLL_GoiTap
     {
-        DAL_GoiTap GT = new DAL_GoiTap();
+        DAL_GoiTap dal = new DAL_GoiTap();
+
+        public DataTable GetAll()
+        {
+            return dal.GetAll();
+        }
+
+        // 🔥 THÊM HÀM NÀY
         public DataTable LayDSGoiTap()
         {
-            return GT.GetGoiTap();
+            return dal.GetAll();
+        }
+
+        public bool Add(string tenGoi, decimal giaTien)
+        {
+            if (string.IsNullOrEmpty(tenGoi))
+                return false;
+
+            return dal.Insert(tenGoi, giaTien);
+        }
+
+        public bool Delete(int ma)
+        {
+            return dal.Delete(ma);
         }
     }
 }

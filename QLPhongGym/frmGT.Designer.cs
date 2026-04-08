@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtTien = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtGia = new System.Windows.Forms.TextBox();
+            this.txtGiaTien = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtTG = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtTenGoi = new System.Windows.Forms.TextBox();
+            this.txtTenGT = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -40,25 +40,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtTien
+            // txtGia
             // 
-            this.txtTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTien.Location = new System.Drawing.Point(605, 167);
-            this.txtTien.Name = "txtTien";
-            this.txtTien.Size = new System.Drawing.Size(173, 34);
-            this.txtTien.TabIndex = 30;
+            this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGia.Location = new System.Drawing.Point(605, 167);
+            this.txtGia.Name = "txtGia";
+            this.txtGia.Size = new System.Drawing.Size(173, 34);
+            this.txtGia.TabIndex = 30;
+            this.txtGia.TextChanged += new System.EventHandler(this.txtTien_TextChanged);
             // 
-            // label1
+            // txtGiaTien
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.Control;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Location = new System.Drawing.Point(621, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 45);
-            this.label1.TabIndex = 29;
-            this.label1.Text = "Giá tiền";
+            this.txtGiaTien.AutoSize = true;
+            this.txtGiaTien.BackColor = System.Drawing.SystemColors.Control;
+            this.txtGiaTien.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGiaTien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtGiaTien.Location = new System.Drawing.Point(621, 118);
+            this.txtGiaTien.Name = "txtGiaTien";
+            this.txtGiaTien.Size = new System.Drawing.Size(139, 45);
+            this.txtGiaTien.TabIndex = 29;
+            this.txtGiaTien.Text = "Giá tiền";
+            this.txtGiaTien.Click += new System.EventHandler(this.label1_Click);
             // 
             // label5
             // 
@@ -73,27 +75,27 @@
             this.label5.TabIndex = 28;
             this.label5.Text = "KingDomGym";
             // 
-            // txtTG
+            // txtTenGoi
             // 
-            this.txtTG.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTG.Location = new System.Drawing.Point(252, 170);
-            this.txtTG.Name = "txtTG";
-            this.txtTG.Size = new System.Drawing.Size(173, 34);
-            this.txtTG.TabIndex = 27;
-            this.txtTG.TextChanged += new System.EventHandler(this.txtHVT_TextChanged);
+            this.txtTenGoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenGoi.Location = new System.Drawing.Point(252, 170);
+            this.txtTenGoi.Name = "txtTenGoi";
+            this.txtTenGoi.Size = new System.Drawing.Size(173, 34);
+            this.txtTenGoi.TabIndex = 27;
+            this.txtTenGoi.TextChanged += new System.EventHandler(this.txtHVT_TextChanged);
             // 
-            // label3
+            // txtTenGT
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Control;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(269, 118);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(135, 45);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Tên Gói";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.txtTenGT.AutoSize = true;
+            this.txtTenGT.BackColor = System.Drawing.SystemColors.Control;
+            this.txtTenGT.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenGT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.txtTenGT.Location = new System.Drawing.Point(269, 118);
+            this.txtTenGT.Name = "txtTenGT";
+            this.txtTenGT.Size = new System.Drawing.Size(135, 45);
+            this.txtTenGT.TabIndex = 26;
+            this.txtTenGT.Text = "Tên Gói";
+            this.txtTenGT.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnThoat
             // 
@@ -117,6 +119,7 @@
             this.btnThem.TabIndex = 35;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -128,6 +131,7 @@
             this.btnXoa.TabIndex = 34;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // dataGridView1
             // 
@@ -148,13 +152,14 @@
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.txtTien);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtGia);
+            this.Controls.Add(this.txtGiaTien);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtTG);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtTenGoi);
+            this.Controls.Add(this.txtTenGT);
             this.Name = "frmGT";
             this.Text = "Gói tập";
+            this.Load += new System.EventHandler(this.frmGT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,11 +168,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtTien;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtGia;
+        private System.Windows.Forms.Label txtGiaTien;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtTG;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTenGoi;
+        private System.Windows.Forms.Label txtTenGT;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnXoa;
