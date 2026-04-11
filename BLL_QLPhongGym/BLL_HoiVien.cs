@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DAL_QLPhongGym;
 using System.Data;
 using DTO_QLPhongGym;
+using System.ComponentModel;
 
 namespace BLL_QLPhongGym
 {
@@ -44,6 +45,12 @@ namespace BLL_QLPhongGym
         public bool CapNhatHV(int mahv, int magoi, int mapt)
         {
             return HV.CapNhatHV(mahv, magoi, mapt);
+        }
+        public bool CapNhatSoDienThoai(int mahv, string sdtMoi)
+        {
+            if (sdtMoi.Length < 10) return false;
+
+            return HV.UpdateSDTHoiVien(mahv, sdtMoi);
         }
     }
 }
