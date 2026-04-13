@@ -175,5 +175,30 @@ namespace QLPhongGym
                 MessageBox.Show("Vui lòng click chọn một hội viên trong bảng ở trên trước!");
             }
         }
+
+        private void btnCapNhatSDT_Click(object sender, EventArgs e)
+        {
+            if (dgvDSHV.CurrentRow != null)
+            {
+                int mahv = Convert.ToInt32(dgvDSHV.CurrentRow.Cells["Mã HV"].Value);
+
+                string sdtMoi = txtSDT.Text.Trim();
+
+                if (HV.CapNhatSoDienThoai(mahv, sdtMoi))
+                {
+                    MessageBox.Show($"Đã cập nhật SĐT mới cho hội viên {mahv}!", "Thành công");
+                    LoadData(); 
+                    txtSDT.Clear(); 
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật thất bại! Vui lòng kiểm tra lại dữ liệu.", "Lỗi");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn hội viên cần đổi SĐT trên bảng!");
+            }
+        }
     }
 }
