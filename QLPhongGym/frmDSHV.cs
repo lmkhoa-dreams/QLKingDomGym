@@ -200,5 +200,10 @@ namespace QLPhongGym
                 MessageBox.Show("Vui lòng chọn hội viên cần đổi SĐT trên bảng!");
             }
         }
+
+        private void cboPTCapNhat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
