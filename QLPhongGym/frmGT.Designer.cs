@@ -43,9 +43,10 @@
             // txtGia
             // 
             this.txtGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGia.Location = new System.Drawing.Point(605, 167);
+            this.txtGia.Location = new System.Drawing.Point(185, 296);
+            this.txtGia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(173, 34);
+            this.txtGia.Size = new System.Drawing.Size(129, 28);
             this.txtGia.TabIndex = 30;
             this.txtGia.TextChanged += new System.EventHandler(this.txtTien_TextChanged);
             // 
@@ -55,9 +56,10 @@
             this.txtGiaTien.BackColor = System.Drawing.SystemColors.Control;
             this.txtGiaTien.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaTien.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtGiaTien.Location = new System.Drawing.Point(621, 118);
+            this.txtGiaTien.Location = new System.Drawing.Point(189, 257);
+            this.txtGiaTien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtGiaTien.Name = "txtGiaTien";
-            this.txtGiaTien.Size = new System.Drawing.Size(139, 45);
+            this.txtGiaTien.Size = new System.Drawing.Size(116, 37);
             this.txtGiaTien.TabIndex = 29;
             this.txtGiaTien.Text = "Giá tiền";
             this.txtGiaTien.Click += new System.EventHandler(this.label1_Click);
@@ -69,18 +71,20 @@
             this.label5.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Red;
             this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label5.Location = new System.Drawing.Point(351, 19);
+            this.label5.Location = new System.Drawing.Point(242, -2);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(359, 67);
+            this.label5.Size = new System.Drawing.Size(287, 54);
             this.label5.TabIndex = 28;
             this.label5.Text = "KingDomGym";
             // 
             // txtTenGoi
             // 
             this.txtTenGoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenGoi.Location = new System.Drawing.Point(252, 170);
+            this.txtTenGoi.Location = new System.Drawing.Point(13, 296);
+            this.txtTenGoi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTenGoi.Name = "txtTenGoi";
-            this.txtTenGoi.Size = new System.Drawing.Size(173, 34);
+            this.txtTenGoi.Size = new System.Drawing.Size(131, 28);
             this.txtTenGoi.TabIndex = 27;
             this.txtTenGoi.TextChanged += new System.EventHandler(this.txtHVT_TextChanged);
             // 
@@ -90,20 +94,23 @@
             this.txtTenGT.BackColor = System.Drawing.SystemColors.Control;
             this.txtTenGT.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenGT.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.txtTenGT.Location = new System.Drawing.Point(269, 118);
+            this.txtTenGT.Location = new System.Drawing.Point(22, 257);
+            this.txtTenGT.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtTenGT.Name = "txtTenGT";
-            this.txtTenGT.Size = new System.Drawing.Size(135, 45);
+            this.txtTenGT.Size = new System.Drawing.Size(113, 37);
             this.txtTenGT.TabIndex = 26;
             this.txtTenGT.Text = "Tên Gói";
             this.txtTenGT.Click += new System.EventHandler(this.label3_Click);
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnThoat.BackColor = System.Drawing.Color.Black;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(865, 482);
+            this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnThoat.Location = new System.Drawing.Point(647, 397);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(172, 55);
+            this.btnThoat.Size = new System.Drawing.Size(129, 45);
             this.btnThoat.TabIndex = 36;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -111,11 +118,13 @@
             // 
             // btnThem
             // 
-            this.btnThem.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnThem.BackColor = System.Drawing.Color.Black;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(20, 482);
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnThem.Location = new System.Drawing.Point(93, 339);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(172, 55);
+            this.btnThem.Size = new System.Drawing.Size(129, 45);
             this.btnThem.TabIndex = 35;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -123,11 +132,13 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnXoa.BackColor = System.Drawing.Color.Black;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(437, 482);
+            this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnXoa.Location = new System.Drawing.Point(93, 397);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(172, 55);
+            this.btnXoa.Size = new System.Drawing.Size(129, 45);
             this.btnXoa.TabIndex = 34;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -136,18 +147,19 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 222);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 65);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1045, 234);
+            this.dataGridView1.Size = new System.Drawing.Size(784, 190);
             this.dataGridView1.TabIndex = 37;
             // 
             // frmGT
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 557);
+            this.ClientSize = new System.Drawing.Size(787, 453);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnThem);
@@ -157,6 +169,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTenGoi);
             this.Controls.Add(this.txtTenGT);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmGT";
             this.Text = "Gói tập";
             this.Load += new System.EventHandler(this.frmGT_Load);

@@ -79,8 +79,9 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnTimKiem.BackColor = System.Drawing.Color.Black;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnTimKiem.Location = new System.Drawing.Point(612, 86);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiem.Name = "btnTimKiem";
@@ -92,8 +93,9 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnThoat.BackColor = System.Drawing.Color.Black;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btnThoat.Location = new System.Drawing.Point(612, 412);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
             this.btnThoat.Name = "btnThoat";
@@ -105,9 +107,10 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnXoa.BackColor = System.Drawing.Color.Black;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(402, 412);
+            this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnXoa.Location = new System.Drawing.Point(170, 412);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(129, 45);
@@ -137,15 +140,17 @@
             this.cboPTCapNhat.Name = "cboPTCapNhat";
             this.cboPTCapNhat.Size = new System.Drawing.Size(154, 27);
             this.cboPTCapNhat.TabIndex = 17;
+            this.cboPTCapNhat.SelectedIndexChanged += new System.EventHandler(this.cboPTCapNhat_SelectedIndexChanged);
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnCapNhat.BackColor = System.Drawing.Color.Black;
             this.btnCapNhat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCapNhat.Location = new System.Drawing.Point(184, 412);
+            this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnCapNhat.Location = new System.Drawing.Point(14, 412);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(129, 45);
+            this.btnCapNhat.Size = new System.Drawing.Size(141, 45);
             this.btnCapNhat.TabIndex = 18;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
