@@ -98,6 +98,16 @@ namespace QLPhongGym
         {
 
         }
+
+        private void dtpNgayDK_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtHVT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -79,7 +79,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnTimKiem.BackColor = System.Drawing.Color.Black;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.Location = new System.Drawing.Point(612, 86);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
@@ -92,7 +92,7 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnThoat.BackColor = System.Drawing.Color.Black;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.Location = new System.Drawing.Point(612, 412);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
@@ -105,7 +105,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnXoa.BackColor = System.Drawing.Color.Black;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(402, 412);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
@@ -140,7 +140,7 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.BackColor = System.Drawing.Color.DarkSalmon;
+            this.btnCapNhat.BackColor = System.Drawing.Color.Black;
             this.btnCapNhat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.Location = new System.Drawing.Point(184, 412);
             this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);

@@ -102,7 +102,7 @@ namespace QLPhongGym
                     }
                     else
                     {
-                        MessageBox.Show("Đã có người ĐK ko thể xóa");
+                        MessageBox.Show("Đã có người đăng ký ko thể xóa");
                     }
                 }
             }
@@ -110,6 +110,11 @@ namespace QLPhongGym
             {
                 MessageBox.Show("Vui lòng click chọn một dòng PT ở bảng bên dưới để xóa!", "Thông báo");
             }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
