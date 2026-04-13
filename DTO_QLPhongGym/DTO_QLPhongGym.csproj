@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="DTO_DangNhap.cs" />
     <Compile Include="DTO_GoiTap.cs" />
+    <Compile Include="DTO_HoaDon.cs" />
     <Compile Include="DTO_HoiVien.cs" />
     <Compile Include="DTO_PT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

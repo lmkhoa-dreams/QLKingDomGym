@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BLL_DangNhap.cs" />
     <Compile Include="BLL_GoiTap.cs" />
+    <Compile Include="BLL_HoaDon.cs" />
     <Compile Include="BLL_HoiVien.cs" />
     <Compile Include="BLL_PT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

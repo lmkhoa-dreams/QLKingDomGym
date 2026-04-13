@@ -71,7 +71,20 @@ namespace QLPhongGym
             if (HV.ThemHoiVien(hv))
             {
                 MessageBox.Show("Đăng ký thành công!");
-                btnXoa_Click(sender, e);
+
+                // 👉 MỞ FORM THANH TOÁN
+                frmThanhToan f = new frmThanhToan();
+
+                // 👉 TRUYỀN DỮ LIỆU
+                f.TenKH = txtHVT.Text;
+                f.TenGoi = cbGT.Text;
+
+                // nếu có giá tiền thì truyền thêm
+                // f.SoTien = ??? (tuỳ bạn lấy từ đâu)
+
+                f.ShowDialog(); // mở form thanh toán
+
+                btnXoa_Click(sender, e); // reset form
             }
             else
             {

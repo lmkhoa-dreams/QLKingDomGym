@@ -45,6 +45,7 @@
     <Compile Include="DAL_GoiTap.cs" />
     <Compile Include="DAL_HoiVien.cs" />
     <Compile Include="DAL_PT.cs" />
+    <Compile Include="DLA_HoaDon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
