@@ -172,27 +172,5 @@ namespace DAL_QLPhongGym
                 return cmd.ExecuteNonQuery() >= 0;
             }
         }
-        // Thêm cập nhật số điện thoại
-        public bool UpdateSDTHoiVien(int mahv, string sdtMoi)
-        {
-            using (SqlConnection conn = new SqlConnection(connStr))
-            {
-                try
-                {
-                    conn.Open();
-                    string sql = "UPDATE hoivien SET sdt = @sdt WHERE mahv = @ma";
-                    SqlCommand cmd = new SqlCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@sdt", sdtMoi);
-                    cmd.Parameters.AddWithValue("@ma", mahv);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                    return rowsAffected > 0;
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
-            }
-        }
     }
 }

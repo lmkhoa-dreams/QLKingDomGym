@@ -86,12 +86,6 @@ namespace QLPhongGym
                 MessageBox.Show("Vui lòng chọn hội viên cần xóa");
             }
         }
-
-        private void btnChinhSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void frmDSHV_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -100,7 +94,7 @@ namespace QLPhongGym
             //Cho phép DataGridView được chỉnh sửa
             dgvDSHV.ReadOnly = false;
 
-            //Những cột ko đc phép sửa
+            //Những cột không được sửa
             dgvDSHV.Columns["Mã HV"].ReadOnly = true;
             dgvDSHV.Columns["Gói Tập"].ReadOnly = true;
             dgvDSHV.Columns["Tên PT"].ReadOnly = true;
@@ -138,8 +132,7 @@ namespace QLPhongGym
             string tuKhoa = txtTimKiem.Text.Trim();
             dgvDSHV.DataSource = HV.TimKiem(tuKhoa);
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCapNhat_Click(object sender, EventArgs e)
         {
             // Kiểm tra có click dòng trên dataview ko
             if (dgvDSHV.CurrentRow != null)
@@ -148,7 +141,7 @@ namespace QLPhongGym
 
                 if (cboGoiTapCapNhat.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Vui lòng chọn gói tập muốn đăng ký!");
+                    MessageBox.Show("Vui lòng chọn đầy đủ thông tin");
                     return;
                 }
 
@@ -162,7 +155,7 @@ namespace QLPhongGym
                 // Gọi BLL 
                 if (HV.CapNhatHV(mahv, magoi, mapt))
                 {
-                    MessageBox.Show("Cập nhật gói tập thành công!");
+                    MessageBox.Show("Cập nhật thành công!");
                     LoadData();
                 }
                 else
@@ -172,35 +165,9 @@ namespace QLPhongGym
             }
             else
             {
-                MessageBox.Show("Vui lòng click chọn một hội viên trong bảng ở trên trước!");
+                MessageBox.Show("Vui lòng chọn hội viên cần sửa!");
             }
         }
-
-        private void btnCapNhatSDT_Click(object sender, EventArgs e)
-        {
-            if (dgvDSHV.CurrentRow != null)
-            {
-                int mahv = Convert.ToInt32(dgvDSHV.CurrentRow.Cells["Mã HV"].Value);
-
-                string sdtMoi = txtSDT.Text.Trim();
-
-                if (HV.CapNhatSoDienThoai(mahv, sdtMoi))
-                {
-                    MessageBox.Show($"Đã cập nhật SĐT mới cho hội viên {mahv}!", "Thành công");
-                    LoadData(); 
-                    txtSDT.Clear(); 
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật thất bại! Vui lòng kiểm tra lại dữ liệu.", "Lỗi");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Vui lòng chọn hội viên cần đổi SĐT trên bảng!");
-            }
-        }
-
         private void cboPTCapNhat_SelectedIndexChanged(object sender, EventArgs e)
         {
 

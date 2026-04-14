@@ -13,12 +13,10 @@ namespace BLL_QLPhongGym
     public class BLL_HoiVien
     {
         DAL_HoiVien HV = new DAL_HoiVien();
-
         public DataTable LayDanhSach()
         {
             return HV.GetDanhSachHoiVien();
         }
-
         public bool ThemHoiVien(DTO_HoiVien hv)
         {
             if (string.IsNullOrWhiteSpace(hv.Ten) || string.IsNullOrWhiteSpace(hv.SDT))
@@ -45,12 +43,6 @@ namespace BLL_QLPhongGym
         public bool CapNhatHV(int mahv, int magoi, int mapt)
         {
             return HV.CapNhatHV(mahv, magoi, mapt);
-        }
-        public bool CapNhatSoDienThoai(int mahv, string sdtMoi)
-        {
-            if (sdtMoi.Length < 10) return false;
-
-            return HV.UpdateSDTHoiVien(mahv, sdtMoi);
         }
     }
 }

@@ -37,7 +37,6 @@
             this.cboGoiTapCapNhat = new System.Windows.Forms.ComboBox();
             this.cboPTCapNhat = new System.Windows.Forms.ComboBox();
             this.btnCapNhat = new System.Windows.Forms.Button();
-            this.txtSDT = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSHV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,22 +47,21 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label3.Location = new System.Drawing.Point(244, 24);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(325, 30);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(287, 54);
+            this.label3.Size = new System.Drawing.Size(359, 67);
             this.label3.TabIndex = 9;
             this.label3.Text = "KingDomGym";
             // 
             // dgvDSHV
             // 
             this.dgvDSHV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDSHV.Location = new System.Drawing.Point(2, 143);
-            this.dgvDSHV.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDSHV.Location = new System.Drawing.Point(3, 176);
+            this.dgvDSHV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvDSHV.Name = "dgvDSHV";
             this.dgvDSHV.RowHeadersWidth = 51;
             this.dgvDSHV.RowTemplate.Height = 24;
-            this.dgvDSHV.Size = new System.Drawing.Size(744, 214);
+            this.dgvDSHV.Size = new System.Drawing.Size(992, 263);
             this.dgvDSHV.TabIndex = 10;
             this.dgvDSHV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dgvDSHV.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -71,10 +69,10 @@
             // txtTimKiem
             // 
             this.txtTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(2, 96);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Location = new System.Drawing.Point(3, 118);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(607, 36);
+            this.txtTimKiem.Size = new System.Drawing.Size(808, 43);
             this.txtTimKiem.TabIndex = 11;
             // 
             // btnTimKiem
@@ -82,10 +80,10 @@
             this.btnTimKiem.BackColor = System.Drawing.Color.Black;
             this.btnTimKiem.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTimKiem.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnTimKiem.Location = new System.Drawing.Point(612, 86);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimKiem.Location = new System.Drawing.Point(816, 106);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(129, 45);
+            this.btnTimKiem.Size = new System.Drawing.Size(172, 55);
             this.btnTimKiem.TabIndex = 12;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = false;
@@ -96,10 +94,10 @@
             this.btnThoat.BackColor = System.Drawing.Color.Black;
             this.btnThoat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnThoat.Location = new System.Drawing.Point(612, 412);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThoat.Location = new System.Drawing.Point(785, 507);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(129, 45);
+            this.btnThoat.Size = new System.Drawing.Size(172, 55);
             this.btnThoat.TabIndex = 13;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -110,10 +108,10 @@
             this.btnXoa.BackColor = System.Drawing.Color.Black;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnXoa.Location = new System.Drawing.Point(170, 412);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
+            this.btnXoa.Location = new System.Drawing.Point(443, 507);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(129, 45);
+            this.btnXoa.Size = new System.Drawing.Size(172, 55);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -124,10 +122,10 @@
             this.cboGoiTapCapNhat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGoiTapCapNhat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboGoiTapCapNhat.FormattingEnabled = true;
-            this.cboGoiTapCapNhat.Location = new System.Drawing.Point(9, 377);
-            this.cboGoiTapCapNhat.Margin = new System.Windows.Forms.Padding(2);
+            this.cboGoiTapCapNhat.Location = new System.Drawing.Point(12, 464);
+            this.cboGoiTapCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboGoiTapCapNhat.Name = "cboGoiTapCapNhat";
-            this.cboGoiTapCapNhat.Size = new System.Drawing.Size(146, 27);
+            this.cboGoiTapCapNhat.Size = new System.Drawing.Size(193, 31);
             this.cboGoiTapCapNhat.TabIndex = 16;
             // 
             // cboPTCapNhat
@@ -135,10 +133,10 @@
             this.cboPTCapNhat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPTCapNhat.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboPTCapNhat.FormattingEnabled = true;
-            this.cboPTCapNhat.Location = new System.Drawing.Point(159, 377);
-            this.cboPTCapNhat.Margin = new System.Windows.Forms.Padding(2);
+            this.cboPTCapNhat.Location = new System.Drawing.Point(212, 464);
+            this.cboPTCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cboPTCapNhat.Name = "cboPTCapNhat";
-            this.cboPTCapNhat.Size = new System.Drawing.Size(154, 27);
+            this.cboPTCapNhat.Size = new System.Drawing.Size(204, 31);
             this.cboPTCapNhat.TabIndex = 17;
             this.cboPTCapNhat.SelectedIndexChanged += new System.EventHandler(this.cboPTCapNhat_SelectedIndexChanged);
             // 
@@ -147,28 +145,20 @@
             this.btnCapNhat.BackColor = System.Drawing.Color.Black;
             this.btnCapNhat.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCapNhat.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCapNhat.Location = new System.Drawing.Point(14, 412);
-            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCapNhat.Location = new System.Drawing.Point(114, 507);
+            this.btnCapNhat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(141, 45);
+            this.btnCapNhat.Size = new System.Drawing.Size(188, 55);
             this.btnCapNhat.TabIndex = 18;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.UseVisualStyleBackColor = false;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhatSDT_Click);
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(318, 381);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(148, 20);
-            this.txtSDT.TabIndex = 19;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
             // 
             // frmDSHV
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(746, 468);
-            this.Controls.Add(this.txtSDT);
+            this.ClientSize = new System.Drawing.Size(995, 576);
             this.Controls.Add(this.btnCapNhat);
             this.Controls.Add(this.cboPTCapNhat);
             this.Controls.Add(this.cboGoiTapCapNhat);
@@ -178,7 +168,7 @@
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.dgvDSHV);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDSHV";
             this.Text = "DS Hội Viên";
             this.Load += new System.EventHandler(this.frmDSHV_Load);
@@ -199,6 +189,5 @@
         private System.Windows.Forms.ComboBox cboGoiTapCapNhat;
         private System.Windows.Forms.ComboBox cboPTCapNhat;
         private System.Windows.Forms.Button btnCapNhat;
-        private System.Windows.Forms.TextBox txtSDT;
     }
 }
