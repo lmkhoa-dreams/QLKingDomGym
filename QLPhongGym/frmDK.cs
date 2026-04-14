@@ -68,16 +68,44 @@ namespace QLPhongGym
             else
                 hv.IdPT = 0;
 
-            if (HV.ThemHoiVien(hv))
+            // CHỖ THAY ĐỔI BẮT ĐẦU TỪ ĐÂY
+            // --- THAY THẾ TỪ DÒNG 71 TẠI ĐÂY ---
+
+            // 1. Lấy thông tin để truyền sang form Thanh Toán
+            string hoTen = txtHVT.Text;
+            string goiTap = cbGT.Text;
+
+            // 2. Khởi tạo và mở Form Thanh Toán trước khi lưu CSDL
+            frmThanhToan frm = new frmThanhToan(hoTen, goiTap, ""); // Để trống tiền để tự nhập bên kia
+
+            // 3. Kiểm tra nếu người dùng nhấn nút "Xác Nhận" trên Form Thanh Toán
+            if (frm.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Đăng ký thành công!");
-                btnXoa_Click(sender, e);
+                // 4. Khi đã thanh toán xong (nhấn Xác nhận), lúc này mới gọi lệnh lưu vào CSDL
+                if (HV.ThemHoiVien(hv))
+                {
+                    MessageBox.Show("Đăng ký và Thanh toán thành công!", "Thông báo");
+                    btnXoa_Click(sender, e); // Làm mới form sau khi hoàn tất
+                }
+                else
+                {
+                    MessageBox.Show("Lưu dữ liệu thất bại, vui lòng kiểm tra lại!");
+                }
             }
             else
             {
-                MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại!");
+                // Trường hợp người dùng nhấn Thoát hoặc đóng Form thanh toán mà không xác nhận
+                MessageBox.Show("Hủy bỏ đăng ký!", "Thông báo");
             }
-        }
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                // CHỈ KHI NÀO BẠN GÁN DialogResult = OK THÌ ĐOẠN CODE LƯU CSDL NÀY MỚI CHẠY
+                if (HV.ThemHoiVien(hv))
+                {
+                    MessageBox.Show("Đăng ký thành công!");
+                }
+            }
+        } // Dấu đóng của hàm btnThem_Click
         private void btnXoa_Click(object sender, EventArgs e)
         {
             txtHVT.Clear();
