@@ -34,23 +34,23 @@ namespace QLPhongGym
         private void frmDK_Load(object sender, EventArgs e)
         {
             {
-                cbGT.DataSource = GT.LayDSGoiTap();
-                cbGT.DisplayMember = "tengoi";
-                cbGT.ValueMember = "magoi";
+                cbGoitap.DataSource = GT.LayDSGoiTap();
+                cbGoitap.DisplayMember = "tengoi";
+                cbGoitap.ValueMember = "magoi";
 
                 cbPT.DataSource = PT.LayDSPT();
                 cbPT.DisplayMember = "ten";
                 cbPT.ValueMember = "mapt";
 
                 cbGioiTinh.SelectedIndex = -1;
-                cbGT.SelectedIndex = -1;
+                cbGoitap.SelectedIndex = -1;
                 cbPT.SelectedIndex = -1;
             }
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (cbGT.SelectedValue == null)
+            if (cbGoitap.SelectedValue == null)
             {
                 MessageBox.Show("Vui lòng chọn gói tập!", "Cảnh báo");
                 return;
@@ -60,59 +60,42 @@ namespace QLPhongGym
             hv.Ten = txtHVT.Text;
             hv.SDT = txtSDT.Text;
             hv.GioiTinh = cbGioiTinh.Text;
-            hv.IdGoiTap = Convert.ToInt32(cbGT.SelectedValue);
+            hv.IdGoiTap = Convert.ToInt32(cbGoitap.SelectedValue);
             hv.NgayDK = dtpNgayDK.Value;
+            hv.IdPT = (cbPT.SelectedValue != null) ? Convert.ToInt32(cbPT.SelectedValue) : 0;
 
-            if (cbPT.SelectedValue != null)
-                hv.IdPT = Convert.ToInt32(cbPT.SelectedValue);
-            else
-                hv.IdPT = 0;
+            string giaTien = "0";
+            if (cbGoitap.Text.Contains("1 Tháng")) giaTien = "250000";
+            else if (cbGoitap.Text.Contains("3 Tháng")) giaTien = "280000";
+            else giaTien = "200000"; 
 
-            // CHỖ THAY ĐỔI BẮT ĐẦU TỪ ĐÂY
-            // --- THAY THẾ TỪ DÒNG 71 TẠI ĐÂY ---
+            frmThanhToan frm = new frmThanhToan(hv.Ten, cbGoitap.Text, giaTien);
 
-            // 1. Lấy thông tin để truyền sang form Thanh Toán
-            string hoTen = txtHVT.Text;
-            string goiTap = cbGT.Text;
-
-            // 2. Khởi tạo và mở Form Thanh Toán trước khi lưu CSDL
-            frmThanhToan frm = new frmThanhToan(hoTen, goiTap, ""); // Để trống tiền để tự nhập bên kia
-
-            // 3. Kiểm tra nếu người dùng nhấn nút "Xác Nhận" trên Form Thanh Toán
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                // 4. Khi đã thanh toán xong (nhấn Xác nhận), lúc này mới gọi lệnh lưu vào CSDL
+
                 if (HV.ThemHoiVien(hv))
                 {
                     MessageBox.Show("Đăng ký và Thanh toán thành công!", "Thông báo");
-                    btnXoa_Click(sender, e); // Làm mới form sau khi hoàn tất
+                    btnXoa_Click(sender, e); 
                 }
                 else
                 {
-                    MessageBox.Show("Lưu dữ liệu thất bại, vui lòng kiểm tra lại!");
+                    MessageBox.Show("Lưu dữ liệu thất bại, vui lòng kiểm tra SQL!");
                 }
             }
             else
             {
-                // Trường hợp người dùng nhấn Thoát hoặc đóng Form thanh toán mà không xác nhận
                 MessageBox.Show("Hủy bỏ đăng ký!", "Thông báo");
             }
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                // CHỈ KHI NÀO BẠN GÁN DialogResult = OK THÌ ĐOẠN CODE LƯU CSDL NÀY MỚI CHẠY
-                if (HV.ThemHoiVien(hv))
-                {
-                    MessageBox.Show("Đăng ký thành công!");
-                }
-            }
-        } // Dấu đóng của hàm btnThem_Click
+        }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             txtHVT.Clear();
             txtSDT.Clear();
 
             cbGioiTinh.SelectedIndex = -1;
-            cbGT.SelectedIndex = -1;
+            cbGoitap.SelectedIndex = -1;
             cbPT.SelectedIndex = -1;
 
             txtHVT.Focus();

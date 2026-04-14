@@ -145,6 +145,10 @@
       <Project>{e3177faf-9886-40b8-81ad-9db2e86f2dbf}</Project>
       <Name>BLL_QLPhongGym</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DAL_QLPhongGym\DAL_QLPhongGym.csproj">
+      <Project>{64698851-d01c-43de-906a-d817c566c259}</Project>
+      <Name>DAL_QLPhongGym</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DTO_QLPhongGym\DTO_QLPhongGym.csproj">
       <Project>{2393ab7c-263b-43d6-be04-45b9c808cbaf}</Project>
       <Name>DTO_QLPhongGym</Name>

@@ -55,5 +55,10 @@ namespace QLPhongGym
         {
 
         }
+        private void btnThanhToanMain_Click(object sender, EventArgs e)
+        {
+            frmThanhToan f = new frmThanhToan("", "", "");
+            f.ShowDialog();
+        }
     }
 }

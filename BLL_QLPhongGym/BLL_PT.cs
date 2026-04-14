@@ -14,7 +14,7 @@ namespace BLL_QLPhongGym
         DAL_PT PT = new DAL_PT();
         public DataTable LayDSPT()
         {
-            return PT.GetPT();
+            return PT.LayDSPPT();
         }
         public bool ThemPT(DTO_PT pt)
         {
