@@ -1,49 +1,87 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Data; // Phải có cái này để đọc bảng dữ liệu
 
 namespace QLPhongGym
 {
     public partial class frmThanhToan : Form
     {
+        DAL_QLPhongGym.DAL_PT dalPT = new DAL_QLPhongGym.DAL_PT();
+        DAL_QLPhongGym.DAL_HoiVien dalHV = new DAL_QLPhongGym.DAL_HoiVien();
         public frmThanhToan(string hoTen, string goiTap, string giaTien)
         {
             InitializeComponent();
             txtTenHoiVien.Text = hoTen;
-            cbGoitap.Text = goiTap;
+            cbGoitap.Text = goiTap; 
             txtSoTien.Text = giaTien;
-        }// Dán đoạn này vào dưới hàm frmThanhToan
+        }
+        private void frmThanhToan_Load(object sender, EventArgs e)
+        {
+            try
+            {
+
+                DataTable dt = dalPT.LayDanhSachPT();
+
+                if (dt != null && dt.Rows.Count > 0)
+                {
+                    
+                    cboChonPT.DataSource = dt;
+                    cboChonPT.DisplayMember = "ten"; 
+                    cboChonPT.ValueMember = "mapt";  
+                    cboChonPT.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show("Dữ liệu PT đang trống hoặc không kết nối được SQL!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            }
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txtSoTien.Text))
+            if (string.IsNullOrEmpty(txtSoTien.Text) || cboChonPT.SelectedValue == null)
             {
-                MessageBox.Show("Vui lòng nhập số tiền thanh toán!");
+                MessageBox.Show("nhập đủ số tiền và chọn PT đã nhé!", "Thông báo");
                 return;
             }
-            this.DialogResult = DialogResult.OK; // Tấm vé thông hành báo về Form Đăng ký
-            this.Close();
+
+            try
+            {
+                DTO_QLPhongGym.DTO_HoiVien hv = new DTO_QLPhongGym.DTO_HoiVien();
+                hv.Ten = txtTenHoiVien.Text;
+                hv.GioiTinh = "Nam"; 
+                hv.SDT = "0000000000"; 
+
+                hv.IdPT = int.Parse(cboChonPT.SelectedValue.ToString());
+
+                hv.NgayDK = DateTime.Now;
+
+                hv.IdGoiTap = 1;
+
+                if (dalHV.ThemHoiVien(hv))
+                {
+                    MessageBox.Show("Thêm hội viên và thanh toán thành công");
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Lưu thất bại!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi code : " + ex.Message);
+            }
         }
 
-        // 1. Code cho nút Thoát
-        private void btnThoat_Click_1(object sender, EventArgs e) // Tên mới mặc kệ nó
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        // 2. Code cho nút Xóa
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            // Lệnh xóa trắng ô nhập tiền để nhập lại
-            txtSoTien.Clear();
-            txtSoTien.Focus(); // Đưa con trỏ chuột quay lại ô tiền
-        }
-
-        private void btnThem_Click_1(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            this.Close(); 
         }
     }
 }
-
-
-  

@@ -172,5 +172,17 @@ namespace DAL_QLPhongGym
                 return cmd.ExecuteNonQuery() >= 0;
             }
         }
+        public bool ThemHoiVienMoi(string ten, string goi, string gia, string maPT)
+        {
+            DTO_HoiVien hv = new DTO_HoiVien();
+            hv.Ten = ten;
+            hv.GioiTinh = "Nam"; // Mặc định hoặc Kiệt truyền từ Form sang
+            hv.SDT = "000";      // Mặc định
+            hv.IdGoiTap = 1;     // Cần logic để lấy ID gói tập từ tên gói
+            hv.IdPT = int.Parse(maPT);
+            hv.NgayDK = DateTime.Now;
+
+            return ThemHoiVien(hv); // Gọi lại chính cái hàm của bạn Kiệt
+        }
     }
 }

@@ -13,11 +13,11 @@ namespace DAL_QLPhongGym
     {
         string connStr = @"Data Source=localhost;Initial Catalog=KingDomGym;Integrated Security=True";
 
-        public DataTable GetPT()
+        public DataTable LayDSPPT()
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string sql = "SELECT mapt, ten, gioitinh, sdt FROM pt";
+                string sql = "SELECT mapt, ten FROM pt";
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
@@ -46,6 +46,17 @@ namespace DAL_QLPhongGym
                         return false;
                     }
                 }
+            }
+        }
+        public DataTable LayDanhSachPT()
+        {
+            using (SqlConnection conn = new SqlConnection(@"Data Source=localhost;Initial Catalog=KingDomGym;Integrated Security=True"))
+            {
+                string sql = "SELECT mapt, ten FROM pt"; 
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
             }
         }
         public bool XoaPT(int maPT)

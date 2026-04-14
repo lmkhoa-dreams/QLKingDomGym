@@ -36,6 +36,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.btnThanhToanMain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,7 +90,7 @@
             this.btnPT.Location = new System.Drawing.Point(11, 32);
             this.btnPT.Margin = new System.Windows.Forms.Padding(2);
             this.btnPT.Name = "btnPT";
-            this.btnPT.Size = new System.Drawing.Size(149, 45);
+            this.btnPT.Size = new System.Drawing.Size(158, 45);
             this.btnPT.TabIndex = 8;
             this.btnPT.Text = "PT";
             this.btnPT.UseVisualStyleBackColor = false;
@@ -130,11 +131,25 @@
             this.textBox2.Text = "Xin Chào , Admin";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // btnThanhToanMain
+            // 
+            this.btnThanhToanMain.BackColor = System.Drawing.Color.Black;
+            this.btnThanhToanMain.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
+            this.btnThanhToanMain.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.btnThanhToanMain.Location = new System.Drawing.Point(11, 91);
+            this.btnThanhToanMain.Name = "btnThanhToanMain";
+            this.btnThanhToanMain.Size = new System.Drawing.Size(158, 45);
+            this.btnThanhToanMain.TabIndex = 28;
+            this.btnThanhToanMain.Text = "Thanh Toán";
+            this.btnThanhToanMain.UseVisualStyleBackColor = false;
+            this.btnThanhToanMain.Click += new System.EventHandler(this.btnThanhToanMain_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(846, 621);
+            this.Controls.Add(this.btnThanhToanMain);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.btnDK);
             this.Controls.Add(this.btnDSHV);
@@ -160,5 +175,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button btnThanhToanMain;
     }
 }
