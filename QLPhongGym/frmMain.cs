@@ -16,49 +16,33 @@ namespace QLPhongGym
         {
             InitializeComponent();
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnDK_Click(object sender, EventArgs e)
         {
             frmDK DK = new frmDK();
             DK.ShowDialog();
         }
-
         private void btnDSHV_Click(object sender, EventArgs e)
         {
             frmDSHV dSHV = new frmDSHV();
             dSHV.ShowDialog();
         }
-
         private void btnPT_Click(object sender, EventArgs e)
         {
             frmQLPT PT = new frmQLPT();
             PT.ShowDialog();
         }
-
         private void btnGT_Click(object sender, EventArgs e)
         {
             frmGT GT = new frmGT();
             GT.ShowDialog();
         }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void btnThanhToanMain_Click(object sender, EventArgs e)
-        {
-            frmThanhToan f = new frmThanhToan("", "", "");
-            f.ShowDialog();
         }
     }
 }
