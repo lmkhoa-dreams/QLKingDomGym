@@ -23,7 +23,15 @@ namespace QLPhongGym
         {
             BLL_PT dal = new BLL_PT();
             dgvPT.DataSource = dal.LayDSPT();
-            dgvPT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            if (dgvPT.Columns.Count > 0)
+            {
+                dgvPT.Columns["mapt"].HeaderText = "Mã PT";
+                dgvPT.Columns["ten"].HeaderText = "Họ và Tên";
+                dgvPT.Columns["gioitinh"].HeaderText = "Giới Tính";
+                dgvPT.Columns["sdt"].HeaderText = "Số Điện Thoại";
+
+                dgvPT.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
         }
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -38,39 +46,31 @@ namespace QLPhongGym
         {
 
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string tenPT = txtTenPT.Text.Trim(); // txtTen là ô nhập Tên
-            string gioiTinh = cbGioiTinh.Text.Trim(); // cboGioiTinh là ô chọn Nam/Nữ
-            string sdt = txtSDT.Text.Trim(); // txtSDT là ô nhập Số điện thoại
+            string tenPT = txtTenPT.Text.Trim();
+            string gioiTinh = cbGioiTinh.Text.Trim();
+            string sdt = txtSDT.Text.Trim();
 
-            // (Tùy chọn) Kiểm tra xem người dùng có nhập thiếu thông tin không
             if (string.IsNullOrEmpty(tenPT) || string.IsNullOrEmpty(gioiTinh) || string.IsNullOrEmpty(sdt))
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin (Tên, Giới tính, SĐT)!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Dừng lại, không chạy tiếp code bên dưới
+                return;
             }
 
-            // 2. Đóng gói dữ liệu vào DTO_PT
             DTO_PT ptMoi = new DTO_PT(tenPT, gioiTinh, sdt);
 
-            // 3. Gọi lớp BLL (hoặc DAL nếu bạn gọi trực tiếp) để lưu vào SQL
-            BLL_PT dal_pt = new BLL_PT(); // Nếu bạn dùng BLL thì đổi thành BLL_PT
-
+            // Gọi BLL để lưu vào SQL
+            BLL_PT dal_pt = new BLL_PT();
             bool ketQua = dal_pt.ThemPT(ptMoi);
 
-            // 4. Thông báo kết quả cho người dùng
+            //Thông báo kết quả
             if (ketQua == true)
             {
                 MessageBox.Show("Đã thêm PT thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Xóa trắng các ô nhập liệu để chuẩn bị nhập người khác
                 txtTenPT.Clear();
                 txtSDT.Clear();
                 cbGioiTinh.SelectedIndex = -1;
-
-                // Nếu bạn có hàm Load lại danh sách lên bảng DataGridView thì gọi ở đây
                 LoadData(); 
             }
             else
@@ -78,7 +78,6 @@ namespace QLPhongGym
                 MessageBox.Show("Thêm thất bại. Vui lòng kiểm tra lại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
         private void dgvPT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -98,7 +97,7 @@ namespace QLPhongGym
                     if (dal.XoaPT(maPT))
                     {
                         MessageBox.Show("Xóa thành công!", "Thông báo");
-                        LoadData(); // Cập nhật lại bảng
+                        LoadData();
                     }
                     else
                     {
@@ -111,7 +110,6 @@ namespace QLPhongGym
                 MessageBox.Show("Vui lòng click chọn một dòng PT ở bảng bên dưới để xóa!", "Thông báo");
             }
         }
-
         private void label3_Click(object sender, EventArgs e)
         {
 

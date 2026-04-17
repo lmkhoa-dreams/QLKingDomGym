@@ -21,12 +21,10 @@ namespace QLPhongGym
         {
             InitializeComponent();
         }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -47,7 +45,6 @@ namespace QLPhongGym
                 cbPT.SelectedIndex = -1;
             }
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             if (cbGoitap.SelectedValue == null)
@@ -62,31 +59,21 @@ namespace QLPhongGym
             hv.GioiTinh = cbGioiTinh.Text;
             hv.IdGoiTap = Convert.ToInt32(cbGoitap.SelectedValue);
             hv.NgayDK = dtpNgayDK.Value;
-            hv.IdPT = (cbPT.SelectedValue != null) ? Convert.ToInt32(cbPT.SelectedValue) : 0;
 
-            string giaTien = "0";
-            if (cbGoitap.Text.Contains("1 Tháng")) giaTien = "250000";
-            else if (cbGoitap.Text.Contains("3 Tháng")) giaTien = "280000";
-            else giaTien = "200000"; 
+            if (cbPT.SelectedValue != null)
+                hv.IdPT = Convert.ToInt32(cbPT.SelectedValue);
+            else
+                hv.IdPT = 0;
 
-            frmThanhToan frm = new frmThanhToan(hv.Ten, cbGoitap.Text, giaTien);
-
-            if (frm.ShowDialog() == DialogResult.OK)
+            // 3. Quăng cái thùng qua cho BLL xử lý
+            if (HV.ThemHoiVien(hv))
             {
-
-                if (HV.ThemHoiVien(hv))
-                {
-                    MessageBox.Show("Đăng ký và Thanh toán thành công!", "Thông báo");
-                    btnXoa_Click(sender, e); 
-                }
-                else
-                {
-                    MessageBox.Show("Lưu dữ liệu thất bại, vui lòng kiểm tra SQL!");
-                }
+                MessageBox.Show("Đăng ký hội viên thành công!", "Thông báo");
+                btnXoa_Click(sender, e);
             }
             else
             {
-                MessageBox.Show("Hủy bỏ đăng ký!", "Thông báo");
+                MessageBox.Show("Thêm thất bại, vui lòng kiểm tra lại!", "Lỗi");
             }
         }
         private void btnXoa_Click(object sender, EventArgs e)
@@ -100,21 +87,6 @@ namespace QLPhongGym
 
             txtHVT.Focus();
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-        private void dtpNgayDK_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtpNgayDK_ValueChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtHVT_TextChanged(object sender, EventArgs e)
         {
 

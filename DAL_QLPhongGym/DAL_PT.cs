@@ -17,7 +17,7 @@ namespace DAL_QLPhongGym
         {
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string sql = "SELECT mapt, ten FROM pt";
+                string sql = "SELECT mapt, ten, gioitinh, sdt FROM pt";
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 DataTable dt = new DataTable();
                 da.Fill(dt);

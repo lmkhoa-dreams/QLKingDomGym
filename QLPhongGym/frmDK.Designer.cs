@@ -42,8 +42,8 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.dtpNgayDK = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cbGoitap = new System.Windows.Forms.ComboBox();
+            this.dtpNgayDK = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // btnThem
@@ -221,26 +221,6 @@
             this.label7.TabIndex = 27;
             this.label7.Text = "Ngày đăng ký";
             // 
-            // dtpNgayDK
-            // 
-            this.dtpNgayDK.BackColor = System.Drawing.Color.White;
-            this.dtpNgayDK.BorderRadius = 5;
-            this.dtpNgayDK.Checked = true;
-            this.dtpNgayDK.CustomFormat = "dd/MM/yyyy";
-            this.dtpNgayDK.FillColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dtpNgayDK.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpNgayDK.ForeColor = System.Drawing.Color.DarkRed;
-            this.dtpNgayDK.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpNgayDK.Location = new System.Drawing.Point(805, 361);
-            this.dtpNgayDK.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtpNgayDK.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtpNgayDK.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.dtpNgayDK.Name = "dtpNgayDK";
-            this.dtpNgayDK.Size = new System.Drawing.Size(204, 28);
-            this.dtpNgayDK.TabIndex = 28;
-            this.dtpNgayDK.Value = new System.DateTime(2026, 4, 9, 3, 1, 8, 965);
-            this.dtpNgayDK.ValueChanged += new System.EventHandler(this.dtpNgayDK_ValueChanged_1);
-            // 
             // cbGoitap
             // 
             this.cbGoitap.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -256,13 +236,23 @@
             this.cbGoitap.Size = new System.Drawing.Size(209, 39);
             this.cbGoitap.TabIndex = 34;
             // 
+            // dtpNgayDK
+            // 
+            this.dtpNgayDK.CalendarFont = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpNgayDK.CustomFormat = "dd/MM/yyyy";
+            this.dtpNgayDK.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpNgayDK.Location = new System.Drawing.Point(799, 361);
+            this.dtpNgayDK.Name = "dtpNgayDK";
+            this.dtpNgayDK.Size = new System.Drawing.Size(226, 22);
+            this.dtpNgayDK.TabIndex = 35;
+            // 
             // frmDK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 561);
-            this.Controls.Add(this.cbGoitap);
             this.Controls.Add(this.dtpNgayDK);
+            this.Controls.Add(this.cbGoitap);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThoat);
@@ -301,7 +291,7 @@
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2DateTimePicker dtpNgayDK;
         private System.Windows.Forms.ComboBox cbGoitap;
+        private System.Windows.Forms.DateTimePicker dtpNgayDK;
     }
 }
